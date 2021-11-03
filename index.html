@@ -16,7 +16,7 @@
 <body>
     <header></header>
 
-    <main>
+    <main id="root">
         <div class=" position-relative">
             <!-- BACKGROUND STYLE -->
             <div class="header_on_background"></div>
@@ -63,15 +63,17 @@
                         <!-- contacts -->
                         <div class="my_style_contacts pe-2">
                             <ul>
-                                <li class="box_contacts">
-                                    <img src="IMG/avatar_1.jpg" class="rounded-circle" width="60px" alt="avatar utente">
+                                <li class="box_contacts" v-for="contact, index in contactList"
+                                    v-for="message, index in contact.messages">
+                                    <!-- non so dove mettere il secondo for -->
+                                    <img :src="contact.avatar" class="rounded-circle" width="60px" alt="avatar utente">
                                     <section class="ps-3">
-                                        <h5 class="">Michele</h5>
-                                        <small class="secondary_text_style">tutto fatto!</small>
+                                        <h5 class="">{{ contact.name }}</h5>
+                                        <small class="secondary_text_style">{{ message.text </small>
                                     </section>
-                                    <span class="timestamp_on_absolute">10/01/2020 16:15:22</span>
+                                    <span class="timestamp_on_absolute">{{ message.date </span>
                                 </li>
-                                <li class="box_contacts">
+                                <!-- <li class="box_contacts">
                                     <img src="IMG/avatar_2.jpg" class="rounded-circle" width="60px" alt="avatar utente">
                                     <section class="ps-3">
                                         <h5 class="">Fabio</h5>
@@ -102,7 +104,7 @@
                                         <small class="secondary_text_style">Sono studente Boolean!</small>
                                     </section>
                                     <span class="timestamp_on_absolute">10/01/2020 16:15:22</span>
-                                </li>
+                                </li> -->
                             </ul>
 
                         </div>
