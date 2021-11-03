@@ -25,6 +25,7 @@
     height: 70px ;
     display: flex;
     align-items: center;
+    background-color: #eae9ea;
 }
 .my_style_users i{
     padding-left: 10px;
@@ -54,4 +55,33 @@
     transform: translate(-50%, -50%);
     vertical-align: middle;
     color: #8fd9fa;
+}
+/* ********************* */
+
+
+/* sezione searchBar */
+.my_style_searchbar input{
+    padding-left: 60px;
+}
+.my_style_searchbar{
+    height: 55px;
+    background-color: #fafafa;
+}
+.my_input_cont{
+    height: 100%; 
+    width: 100%
+}
+.my_input_cont i{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    color: #b6b9bb;
+}
+/* *********************** */
+
+
+.my_style_contacts{
+    background-color: #fafafa;
 }
