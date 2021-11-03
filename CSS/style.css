@@ -14,7 +14,7 @@
     left: 50%;
     transform: translateX(-50%);
     top: 50px;
-    background-color: rgb(219, 219, 219);
+    background-color: rgb(255, 232, 130);
 }
 .my_row_style{
     height: 100%;
@@ -84,4 +84,22 @@
 
 .my_style_contacts{
     background-color: #fafafa;
+    height: calc(100% - 200px);
+    flex-grow: 1;
+    overflow: hidden;
+}
+.my_style_contacts ul{
+    padding: 0;
+    margin: 0;
+}
+.my_style_contacts ul li h5{
+    margin: 0;
+}
+.box_contacts{
+    list-style: none;
+    display: flex;
+    border: 1px solid #e7e9e8;
+    background-color: white;
+    padding: 5px;
+    padding-left: 15px;
 }
