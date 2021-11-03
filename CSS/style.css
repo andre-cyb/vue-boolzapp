@@ -1,0 +1,18 @@
+.header_on_background{
+    height: 100px;
+    background-color: #0b9689;
+}
+.main_on_background{
+    height: calc(100vh - 100px);
+    background-color: #dadcd4;
+}
+
+.my_boolzapp_cont{
+    position: absolute;
+    height: calc(100vh - 100px);
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50px;
+    background-color: rgb(146, 146, 146);
+}
