@@ -42,10 +42,10 @@
                             </div>
                         </div>
                         <!-- notification -->
-                        <div class="my_style_notification p-3">
+                        <div class="my_style_notification p-3 lh-1">
                             <div class="my_bell_style"><i class="fas fa-bell-slash"></i></div>
                             <div class="d-inline ps-3">
-                                <span class="d-block">Ricevi notifiche di nuovi messaggi</span>
+                                <span class="d-block ">Ricevi notifiche di nuovi messaggi</span>
                                 <small><a href="#" style="color: #767575;">Attiva notifiche desktop</a></small>
                             </div>
                         </div>
@@ -64,14 +64,16 @@
                         <div class="my_style_contacts pe-2">
                             <ul>
                                 <li class="box_contacts" v-for="contact, index in contactList"
-                                    v-for="message, index in contact.messages">
+                                    v-for="message, index in contact.messages" @click="activeChat(contact)">
                                     <!-- non so dove mettere il secondo for -->
                                     <img :src="contact.avatar" class="rounded-circle" width="60px" alt="avatar utente">
                                     <section class="ps-3">
                                         <h5 class="">{{ contact.name }}</h5>
-                                        <small class="secondary_text_style">{{ message.text </small>
+                                        <small class="secondary_text_style">{{ getLastMessage(contact.messages)
+                                            }}...</small>
                                     </section>
-                                    <span class="timestamp_on_absolute">{{ message.date </span>
+                                    <span class="timestamp_on_absolute">{{ getLastTimeStamp(contact.messages)
+                                        }}</span>
                                 </li>
                                 <!-- <li class="box_contacts">
                                     <img src="IMG/avatar_2.jpg" class="rounded-circle" width="60px" alt="avatar utente">
@@ -114,10 +116,10 @@
                     <div class="col-8 p-0 d-flex flex-column flex-wrap justify-content-between">
                         <!-- contact chat-->
                         <div class="my_style_users p-3 col-12" style="border-left: 1px solid #d6d6d6;">
-                            <img src="IMG/avatar_1.jpg" class="rounded-circle" width="50px" alt="avatar utente">
+                            <img :src="currentChat.avatar" class="rounded-circle" width="50px" alt="avatar utente">
                             <section class="ps-3">
-                                <h5 class="">Michele</h5>
-                                <small class="secondary_text_style">Ultimo accesso oggi alle 10/01/2020 16:15:22</small>
+                                <h5 class="">{{ currentChat.name }}</h5>
+                                <small class="secondary_text_style">Ultimo accesso oggi alle {{ timeChat() }}</small>
                             </section>
                             <div class="ms-auto">
                                 <i class="fas fa-search"></i>
