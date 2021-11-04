@@ -53,7 +53,8 @@
                         <div class="my_style_searchbar">
                             <div class="input-group mb-3 p-2 ">
                                 <div class="position-relative my_input_cont">
-                                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
+                                    <input type="text" v-model="searchContact" class="form-control"
+                                        placeholder="Cerca o inizia una nuova chat"
                                         aria-label="Example text with button addon" aria-describedby="button-addon1">
                                     <div><i class="fas fa-search"></i></div>
 
@@ -64,7 +65,7 @@
                         <div class="my_style_contacts pe-2">
                             <ul>
                                 <li class="box_contacts" v-for="contact, index in contactList"
-                                    v-for="message, index in contact.messages" @click="activeChat(contact)">
+                                    @click="activeChat(contact)">
                                     <!-- non so dove mettere il secondo for -->
                                     <img :src="contact.avatar" class="rounded-circle" width="60px" alt="avatar utente">
                                     <section class="ps-3">
@@ -153,13 +154,17 @@
 
                         <!--  input messaggi -->
                         <div class="my_style_navbar_message col-12">
-                            <div class="d-inline style_emoji"><i class="far fa-smile"></i></div>
-                            <div class="d-inline style_input">
+                            <div class=" style_emoji"><i class="far fa-smile"></i></div>
+                            <div class=" style_input" :style="this.newMessage.text === `` ? `width:86%` : ``">
                                 <input type="text" class="form-control" v-model="newMessage.text"
                                     v-on:keyup.13="sendMessage" placeholder="Scrivi un messaggio"
                                     aria-label="Example text with button addon" aria-describedby="button-addon1">
                             </div>
-                            <div class="d-inline style_audio_mess"><i class="fas fa-microphone"></i></div>
+                            <div class=" style_send_mess" @click="sendMessage"
+                                :style="this.newMessage.text === `` ? `` : `display: block`">
+                                <i class="fas fa-paper-plane"></i>
+                            </div>
+                            <div class=" style_audio_mess"><i class="fas fa-microphone"></i></div>
                         </div>
                     </div>
                 </div>

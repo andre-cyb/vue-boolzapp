@@ -111,13 +111,16 @@ let app = new Vue({
                 },
             ]
         },
+        ///////////////// {} nuovo messaggio
         newMessage: {
             date: "",
             text: "",
             status: 'sent'
-        }
+        },
+        searchContact: ""
     },
     methods: {
+        ///////////////////////////////////funzioni per contatti sezione sx, recupero ultimo mess e ultima data di invio
         getLastMessage(messages) {
             if (messages.length === 0) {
                 return "";
@@ -132,7 +135,7 @@ let app = new Vue({
             let lastTimeStamp = messages[messages.length - 1].date;
             return lastTimeStamp;
         },
-
+        /////////////////////////////////// Funzioni: prendere la chat selezionata, prendere la data del mess dalla chat corrente
 
         activeChat(contact) {
             this.currentChat = contact;
@@ -146,8 +149,12 @@ let app = new Vue({
             return thisTime;
         },
 
-
+        /////////////////////////////////// funzione con eventi ad invio mess
         sendMessage() {
+
+            if (this.newMessage.text.trim() === "") {
+                return;
+            }
             var datetime = new Date().toLocaleString();
             this.newMessage.date = datetime;
 
@@ -171,6 +178,18 @@ let app = new Vue({
             }, 1000);
 
         },
-
+        ///////////////////////////////////
+        contactFilter() {
+            /* this.searchContact = searchContact; */
+            let match = this.contactList.filter((contatto) => {
+                if (contatto.name.includes(this.searchContact)) {
+                    console.log("found");
+                    return;
+                }
+            });
+        }
     }
 });
+
+// if this.newMessage.text === ""  ? 
+//:class="this.newMessage.text === `` ? `show_send_icon` : ``"

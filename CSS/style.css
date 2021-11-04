@@ -198,7 +198,16 @@ ul{
     text-align: center;
 }
 .style_input{
-    width: 86%;
+    width: 79%;
+}
+.style_send_mess{
+    width: 7%;
+    text-align: center;
+    color: #0b9689;
+    display: none;
+}
+.style_send_mess i {
+    color: #0b9689;
 }
 .style_input input{
     border: none;
@@ -209,3 +218,7 @@ ul{
     text-align: center;
 }
 /* ************************ */
+
+
+
+
