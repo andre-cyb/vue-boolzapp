@@ -129,13 +129,14 @@
                         </div>
                         <!-- display messaggi -->
                         <div class="messages_display_cont me-3 pt-5 pb-4">
-                            <div class="p-2 clearfix">
-                                <div class="message_style style_mess_sent">
-                                    <span style="font-weight: 600;">Hai portato a spasso il cane?</span>
-                                    <p class="timestamp_style secondary_text_style">10/01/2020 16:15:22</p>
+                            <div class="p-2 clearfix" v-for="message, index in currentChat.messages">
+                                <div class="message_style "
+                                    :class="message.status === `sent` ? `style_mess_sent` : `style_mess_received`">
+                                    <span style="font-weight: 600;">{{ message.text }}</span>
+                                    <p class="timestamp_style secondary_text_style">{{ message.date }}</p>
                                 </div>
                             </div>
-                            <div class="p-2 clearfix">
+                            <!-- <div class="p-2 clearfix">
                                 <div class="message_style style_mess_sent">
                                     <span style="font-weight: 600;">Ricordati di dargli da mangiare</span>
                                     <p class="timestamp_style secondary_text_style">10/01/2020 16:15:22</p>
@@ -146,7 +147,7 @@
                                     <span style="font-weight: 600;">Tutto fatto!</span>
                                     <p class="timestamp_style secondary_text_style">10/01/2020 16:15:22</p>
                                 </div>
-                            </div>
+                            </div> -->
 
                         </div>
 
