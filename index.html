@@ -57,7 +57,6 @@
                                         placeholder="Cerca o inizia una nuova chat"
                                         aria-label="Example text with button addon" aria-describedby="button-addon1">
                                     <div><i class="fas fa-search"></i></div>
-
                                 </div>
                             </div>
                         </div>
@@ -76,40 +75,7 @@
                                     <span class="timestamp_on_absolute">{{ getLastTimeStamp(contact.messages)
                                         }}</span>
                                 </li>
-                                <!-- <li class="box_contacts">
-                                    <img src="IMG/avatar_2.jpg" class="rounded-circle" width="60px" alt="avatar utente">
-                                    <section class="ps-3">
-                                        <h5 class="">Fabio</h5>
-                                        <small class="secondary_text_style">Mi piacerebbe ma devo andare a</small>
-                                    </section>
-                                    <span class="timestamp_on_absolute">10/01/2020 16:15:22</span>
-                                </li>
-                                <li class="box_contacts">
-                                    <img src="IMG/avatar_3.jpg" class="rounded-circle" width="60px" alt="avatar utente">
-                                    <section class="ps-3">
-                                        <h5 class="">Samuele</h5>
-                                        <small class="secondary_text_style">Ah scusa!</small>
-                                    </section>
-                                    <span class="timestamp_on_absolute">10/01/2020 16:15:22</span>
-                                </li>
-                                <li class="box_contacts">
-                                    <img src="IMG/avatar_4.jpg" class="rounded-circle" width="60px" alt="avatar utente">
-                                    <section class="ps-3">
-                                        <h5 class="">Luisa</h5>
-                                        <small class="secondary_text_style">Si, ma preferirei andrae al ci</small>
-                                    </section>
-                                    <span class="timestamp_on_absolute">10/01/2020 16:15:22</span>
-                                </li>
-                                <li class="box_contacts">
-                                    <img src="IMG/avatar_5.jpg" class="rounded-circle" width="60px" alt="avatar utente">
-                                    <section class="ps-3">
-                                        <h5 class="">Carlo</h5>
-                                        <small class="secondary_text_style">Sono studente Boolean!</small>
-                                    </section>
-                                    <span class="timestamp_on_absolute">10/01/2020 16:15:22</span>
-                                </li> -->
                             </ul>
-
                         </div>
                     </div>
 
@@ -137,33 +103,28 @@
                                     <p class="timestamp_style secondary_text_style">{{ message.date }}</p>
                                 </div>
                             </div>
-                            <!-- <div class="p-2 clearfix">
-                                <div class="message_style style_mess_sent">
-                                    <span style="font-weight: 600;">Ricordati di dargli da mangiare</span>
-                                    <p class="timestamp_style secondary_text_style">10/01/2020 16:15:22</p>
-                                </div>
-                            </div>
-                            <div class="p-2 clearfix">
-                                <div class="message_style style_mess_received">
-                                    <span style="font-weight: 600;">Tutto fatto!</span>
-                                    <p class="timestamp_style secondary_text_style">10/01/2020 16:15:22</p>
-                                </div>
-                            </div> -->
-
                         </div>
 
                         <!--  input messaggi -->
                         <div class="my_style_navbar_message col-12">
+
+                            <!-- emoji -->
                             <div class=" style_emoji"><i class="far fa-smile"></i></div>
+
+                            <!-- input -->
                             <div class=" style_input" :style="this.newMessage.text === `` ? `width:86%` : ``">
                                 <input type="text" class="form-control" v-model="newMessage.text"
                                     v-on:keyup.13="sendMessage" placeholder="Scrivi un messaggio"
                                     aria-label="Example text with button addon" aria-describedby="button-addon1">
                             </div>
+
+                            <!-- plane icon -->
                             <div class=" style_send_mess" @click="sendMessage"
                                 :style="this.newMessage.text === `` ? `` : `display: block`">
                                 <i class="fas fa-paper-plane"></i>
                             </div>
+
+                            <!-- audio mess icon -->
                             <div class=" style_audio_mess"><i class="fas fa-microphone"></i></div>
                         </div>
                     </div>
