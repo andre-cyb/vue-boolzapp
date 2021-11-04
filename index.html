@@ -155,7 +155,8 @@
                         <div class="my_style_navbar_message col-12">
                             <div class="d-inline style_emoji"><i class="far fa-smile"></i></div>
                             <div class="d-inline style_input">
-                                <input type="text" class="form-control" placeholder="Scrivi un messaggio"
+                                <input type="text" class="form-control" v-model="newMessage.text"
+                                    v-on:keyup.13="sendMessage" placeholder="Scrivi un messaggio"
                                     aria-label="Example text with button addon" aria-describedby="button-addon1">
                             </div>
                             <div class="d-inline style_audio_mess"><i class="fas fa-microphone"></i></div>

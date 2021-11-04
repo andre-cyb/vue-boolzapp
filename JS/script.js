@@ -110,6 +110,11 @@ let app = new Vue({
                     status: 'received'
                 },
             ]
+        },
+        newMessage: {
+            date: "",
+            text: "",
+            status: 'sent'
         }
     },
     methods: {
@@ -142,6 +147,22 @@ let app = new Vue({
         },
 
 
+        sendMessage() {
+            var datetime = new Date().toLocaleString();
+            this.newMessage.date = datetime;
+
+            this.currentChat.messages.push(this.newMessage);
+
+            this.newMessage = {
+                date: "",
+                text: "",
+                status: 'sent'
+            };
+        },
+
+        /* actualDate() {
+            return datetime;
+        } */
 
         autoResponse() {
             setTimeout(() => {
