@@ -158,16 +158,19 @@ let app = new Vue({
                 text: "",
                 status: 'sent'
             };
+
+            setTimeout(() => {
+                var datetime = new Date().toLocaleString();
+
+                let autoMessage = {
+                    date: datetime,
+                    text: "Ok",
+                    status: 'received'
+                };
+                this.currentChat.messages.push(autoMessage);
+            }, 1000);
+
         },
 
-        /* actualDate() {
-            return datetime;
-        } */
-
-        autoResponse() {
-            setTimeout(() => {
-                //codice
-            }, 1000);
-        }
     }
 });
