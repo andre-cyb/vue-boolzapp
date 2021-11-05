@@ -64,7 +64,8 @@
                         <div class="my_style_contacts pe-2">
                             <ul>
                                 <li class="box_contacts" v-for="contact, index in contactList"
-                                    @click="activeChat(contact)">
+                                    :style="index === currentChat.index ? `background-color: rgb(228, 228, 228)` : ``"
+                                    @click="activeChat(contact, index)">
                                     <!-- non so dove mettere il secondo for -->
                                     <img :src="contact.avatar" class="rounded-circle" width="60px" alt="avatar utente">
                                     <section class="ps-3">

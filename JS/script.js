@@ -115,7 +115,8 @@ let app = new Vue({
         newMessage: {
             date: "",
             text: "",
-            status: 'sent'
+            status: 'sent',
+            index: ``
         },
         searchContact: ""
     },
@@ -137,8 +138,9 @@ let app = new Vue({
         },
         /////////////////////////////////// Funzioni: prendere la chat selezionata, prendere la data del mess dalla chat corrente
 
-        activeChat(contact) {
+        activeChat(contact, i) {
             this.currentChat = contact;
+            this.currentChat.index = i;
             /* this.currentChat.visible = true; */
             /* if (!this.currentChat) {
                 this.currentChat.visible = false;
