@@ -157,10 +157,11 @@ ul{
 
 /* stile messaggi */
 .message_style{
+    position: relative;
     background-color: white; 
     max-width: 300px;
     min-width: 200px;
-    padding: 10px 15px 5px 15px;
+    padding: 10px 20px 5px 20px;
     padding-top: 10px;
     border-radius: 10px;
     margin-left: 40px;
@@ -181,6 +182,23 @@ ul{
     margin: 0;
     text-align: end;
 } 
+.style_dropdown{
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    display: block;
+    /* width: 100%;
+    height: 100%; */
+    text-align: right;
+    
+}
+.style_dropdown i{
+    color: rgb(184, 184, 184);
+    font-size: 18px;
+}
+.style_dropdown .dropdown-menu{
+    right: 20px;
+}
 /* ***************** */
 
 /* nav-bar input messaggi */
@@ -231,4 +249,8 @@ ul{
 }
 .box_contacts:focus{
     background-color: rgb(228, 228, 228);
+}
+
+.visible{
+    display: block;
 }

@@ -66,15 +66,13 @@
                                 <li class="box_contacts" v-for="contact, index in contactList"
                                     :style="index === currentChat.index ? `background-color: rgb(228, 228, 228)` : ``"
                                     @click="activeChat(contact, index)">
-                                    <!-- non so dove mettere il secondo for -->
                                     <img :src="contact.avatar" class="rounded-circle" width="60px" alt="avatar utente">
                                     <section class="ps-3">
                                         <h5 class="">{{ contact.name }}</h5>
                                         <small class="secondary_text_style">{{ getLastMessage(contact.messages)
                                             }}...</small>
                                     </section>
-                                    <span class="timestamp_on_absolute">{{ getLastTimeStamp(contact.messages)
-                                        }}</span>
+                                    <span class="timestamp_on_absolute">{{ getLastTimeStamp(contact.messages) }}</span>
                                 </li>
                             </ul>
                         </div>
@@ -98,11 +96,22 @@
                         <!-- display messaggi -->
                         <div class="messages_display_cont me-3 pt-5 pb-4">
                             <div class="p-2 clearfix" v-for="message, index in currentChat.messages">
+
                                 <div class="message_style "
                                     :class="message.status === `sent` ? `style_mess_sent` : `style_mess_received`">
+
                                     <span style="font-weight: 600;">{{ message.text }}</span>
                                     <p class="timestamp_style secondary_text_style">{{ message.date }}</p>
+                                    <!-- dropdown -->
+                                    <div class="style_dropdown" v-on:click="displayMenu">
+                                        <i class="fas fa-angle-down"></i>
+                                        <ul class="dropdown-menu dropdown_style">
+                                            <li><a class="dropdown-item" href="#">Message info</a></li>
+                                            <li><a class="dropdown-item" href="#">Delete message</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
 
@@ -137,6 +146,7 @@
 
     <footer></footer>
     <script src="JS/script.js"></script>
+    <script src="JS/main.js"></script>
 </body>
 
 </html>
