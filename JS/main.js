@@ -122,6 +122,13 @@ let app = new Vue({
 
 
     },
+    computed: {
+        contactFilter: function () {
+            return this.contactList.filter((contatto) => {
+                return contatto.name.toLowerCase().includes(this.searchContact.toLowerCase().trim());
+            });
+        },
+    },
     methods: {
         ///////////////////////////////////funzioni per contatti sezione sx, recupero ultimo mess e ultima data di invio
         getLastMessage(messages) {
@@ -143,11 +150,7 @@ let app = new Vue({
         activeChat(contact, i) {
             this.currentChat = contact;
             this.currentChat.index = i;
-            /* this.currentChat.visible = true; */
-            /* if (!this.currentChat) {
-                this.currentChat.visible = false;
-                return;
-            } */
+
             console.log(contact);
             console.log(this.currentChat);
         },
@@ -190,22 +193,7 @@ let app = new Vue({
 
         },
         ///////////////////////////////////
-        contactFilter() {
-            return this.contactList.filter((contatto) => {
-                return this.contatto.name.includes(this.searchContact);
-            });
-        },
-        ////////////////////////////////////
-        /* displayMenu() {
-            console.log("event");
-        } */
-
 
     }
 });
 
-// if this.newMessage.text === ""  ? 
-//:class="this.newMessage.text === `` ? `show_send_icon` : ``"
-
-//v-on:click="displayMenu"
-//:style="currentChat.info ? `d-block` :``"
