@@ -63,7 +63,7 @@
                         <!-- contacts -->
                         <div class="my_style_contacts pe-2">
                             <ul>
-                                <li class="box_contacts" v-for="contact, index in contactList"
+                                <li class="box_contacts" v-for="contact, index in contactFilter"
                                     :style="index === currentChat.index ? `background-color: rgb(228, 228, 228)` : ``"
                                     @click="activeChat(contact, index)">
                                     <img :src="contact.avatar" class="rounded-circle" width="60px" alt="avatar utente">
@@ -103,7 +103,7 @@
                                     <span style="font-weight: 600;">{{ message.text }}</span>
                                     <p class="timestamp_style secondary_text_style">{{ message.date }}</p>
                                     <!-- dropdown -->
-                                    <div class="style_dropdown" v-on:click="displayMenu">
+                                    <div class="style_dropdown">
                                         <i class="fas fa-angle-down"></i>
                                         <ul class="dropdown-menu dropdown_style">
                                             <li><a class="dropdown-item" href="#">Message info</a></li>

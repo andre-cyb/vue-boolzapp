@@ -191,13 +191,14 @@ let app = new Vue({
         },
         ///////////////////////////////////
         contactFilter() {
-
-
+            return this.contactList.filter((contatto) => {
+                return this.contatto.name.includes(this.searchContact);
+            });
         },
         ////////////////////////////////////
-        displayMenu() {
+        /* displayMenu() {
             console.log("event");
-        }
+        } */
 
 
     }
