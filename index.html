@@ -97,19 +97,35 @@
                         <div class="messages_display_cont me-3 pt-5 pb-4">
                             <div class="p-2 clearfix" v-for="message, index in currentChat.messages">
 
-                                <div class="message_style "
+                                <div class="message_style " tabindex="1"
                                     :class="message.status === `sent` ? `style_mess_sent` : `style_mess_received`">
 
                                     <span style="font-weight: 600;">{{ message.text }}</span>
                                     <p class="timestamp_style secondary_text_style">{{ message.date }}</p>
                                     <!-- dropdown -->
-                                    <div class="style_dropdown">
-                                        <i class="fas fa-angle-down"></i>
-                                        <ul class="dropdown-menu dropdown_style">
-                                            <li><a class="dropdown-item" href="#">Message info</a></li>
-                                            <li><a class="dropdown-item" href="#">Delete message</a></li>
+                                    <div class="style_dropdown dropdown show">
+                                        <i class="fas fa-chevron-down"></i>
+                                        <ul class="dropdown-menu dropdown_style ">
+                                            <li><a class="dropdown-item" href="#" @click="infoMessage">Message info</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#" @click="deleteMessage(index)">Delete
+                                                    message</a>
+                                            </li>
                                         </ul>
                                     </div>
+                                    <!-- <div class="dropdown show">
+                                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button"
+                                            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Dropdown link
+                                        </a>
+
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div> -->
                                 </div>
 
                             </div>

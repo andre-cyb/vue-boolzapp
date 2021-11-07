@@ -151,8 +151,8 @@ let app = new Vue({
             this.currentChat = contact;
             this.currentChat.index = i;
 
-            console.log(contact);
-            console.log(this.currentChat);
+            //console.log(contact);
+            //console.log(this.currentChat);
         },
         timeChat() {
             let chatOnDisplay = this.currentChat;
@@ -193,6 +193,17 @@ let app = new Vue({
 
         },
         ///////////////////////////////////
+        infoMessage() {
+            console.log("info");
+/*             console.log(this.currentChat.messages.this.message);
+ */        },
+        deleteMessage(index) {
+            console.log(this.currentChat.messages);
+            console.log(index);
+            return this.currentChat.messages.splice(index, 1);
+        },
+        /////////////////////////////////////////
+
 
     }
 });
