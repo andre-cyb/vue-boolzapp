@@ -23,6 +23,7 @@ ul{
 
 .my_boolzapp_cont{
     position: absolute;
+    min-height: 440px;
     height: calc(100vh - 60px);
     width: 80%;
     min-width: 1200px;
@@ -117,7 +118,7 @@ ul{
     background-color: #fafafa;
     height: calc(100% - 200px);
     flex-grow: 1;
-    overflow: hidden;
+    overflow: auto;
 
 }
 .my_style_contacts ul{
