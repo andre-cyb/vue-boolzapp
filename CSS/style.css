@@ -18,7 +18,7 @@ ul{
     list-style: none;
 }
 .secondary_text_style{
-    color: #b7babc;
+    color: #727b7d;
 }
 
 .my_boolzapp_cont{
@@ -265,10 +265,13 @@ ul{
 .style_dropdown:hover i{ 
     display: block;
 }
-.style_dropdown:focus i{ 
+/* .style_dropdown:focus i{ 
+    display: block;
+} */
+.style_dropdown:hover ul{ 
     display: block;
 }
-.message_style:focus .dropdown-menu{ 
+/* .message_style:focus .dropdown-menu{ 
     display: block;
     
-}
+} */
